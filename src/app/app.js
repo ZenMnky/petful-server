@@ -3,6 +3,8 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const app = express();
+
+const { NODE_ENV } = require('../config');
 const peopleRouter = require('../people/people-router');
 const petsRouter = require('../pets/pets-router');
 
@@ -17,7 +19,6 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
-  app.
 app.use(express.json());
 app.use('/api/people', peopleRouter);
 app.use('/api/pets', petsRouter);
