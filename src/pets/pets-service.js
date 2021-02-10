@@ -17,7 +17,7 @@ module.exports = {
 		// Return the pets next in line to be adopted.
 		let firstPets = {
 			dog: DogQueue.show(),
-			cat: DogQueue.show()
+			cat: CatQueue.show()
 		};
 
 		return firstPets;
