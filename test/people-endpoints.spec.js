@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const supertest = require('supertest');
-const app = require('../modules/app/app');
-const store = require('../store');
+const app = require('../src/app/app');
+const store = require('../src/store');
 
 describe('People endpoints', () => {
 
