@@ -6,10 +6,10 @@ peopleRouter
 	.route('/')
 	.get((req, res) => {
 		// Return all the people currently in the queue.
-		let data = JSON.stringify(People.allTheFolks());
+		let data = People.allTheFolks();
 		return res
 			.status(200)
-			.send(data);
+			.json(data);
 	})
 	.post((req, res) => {
 		// Add a new person to the queue.
