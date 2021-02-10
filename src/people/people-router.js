@@ -20,7 +20,7 @@ peopleRouter
 		
 		res
 			.status(201)
-			.send(`new addition: ${allTheFolks[allTheFolks.length - 1]}`)
+			.send(`new addition: ${allTheFolks[allTheFolks.length - 1]}`);
 	});
 
 module.exports = peopleRouter;
