@@ -59,7 +59,7 @@ class Queue {
       return null;
     }
 
-    return this.first;
+    return this.first.value;
   }
 
   all() {
