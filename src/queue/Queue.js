@@ -49,6 +49,7 @@ class Queue {
 		}
 
 		this.length--;
+		
 		return trackingNode.value;
     
 	}
