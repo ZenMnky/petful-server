@@ -14,17 +14,28 @@ const allTheFolks = () => {
 
 	// if we're running out of names
 	// grab a random one and stick it in the queue
-	if (listOfFolks.length < 5) {
-		let diff = (5 - listOfFolks.length);
-		let i = 0;
-		do{
+	// make sure that there are five names in queue
+	if (listOfFolks) {
+		if (listOfFolks.length < 5) {
+			let diff = (listOfFolks.length)
+			? (5 - listOfFolks.length)
+			: 5;
+			let i = 0;
+			do{
+				people.enqueue(
+					backUpNames[Math.floor(Math.random() * backUpNames.length)]
+				);
+				i++;
+			} while (i < diff);
+		}
+	} else {
+		for( let i = 0; i < 5; i++){
 			people.enqueue(
 				backUpNames[Math.floor(Math.random() * backUpNames.length)]
 			);
-			i++;
-		} while (i < diff);
-		
+		}
 	}
+	
 
 	return people.all();
 };
