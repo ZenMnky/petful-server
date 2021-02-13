@@ -14,11 +14,11 @@ app.use(morgan(morganOption));
 app.use(helmet());
 app.use(cors());
 app.use(function(req, res, next) {
-    // Solution from: https://www.positronx.io/express-cors-tutorial/
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+	// Solution from: https://www.positronx.io/express-cors-tutorial/
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+	next();
+});
 app.use(express.json());
 app.use('/api/people', peopleRouter);
 app.use('/api/pets', petsRouter);
@@ -36,12 +36,12 @@ app.use('/', (req,res) => {
 });
 
 app.use(function errorHandler(error, req, res, next) {
-    let response;
+	let response;
   
-    response = { error: { message: 'server error' } };
-    console.error(error);
+	response = { error: { message: 'server error' } };
+	console.error(error);
   
-    res.status(500).json(response);
-  });
+	res.status(500).json(response);
+});
 
 module.exports = app;

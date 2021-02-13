@@ -18,8 +18,8 @@ const allTheFolks = () => {
 	if (listOfFolks) {
 		if (listOfFolks.length < 5) {
 			let diff = (listOfFolks.length)
-			? (5 - listOfFolks.length)
-			: 5;
+				? (5 - listOfFolks.length)
+				: 5;
 			let i = 0;
 			do{
 				people.enqueue(
