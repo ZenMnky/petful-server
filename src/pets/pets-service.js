@@ -7,8 +7,10 @@ const store = require('../store');
 const DogQueue = new Queue();
 const CatQueue = new Queue();
 
+
 store.dogs.forEach(dog => DogQueue.enqueue(dog));
 store.cats.forEach(cat => CatQueue.enqueue(cat));
+
 
 // --------------------
 
@@ -19,6 +21,15 @@ module.exports = {
 			dog: DogQueue.show(),
 			cat: CatQueue.show()
 		};
+		console.log('first pets: ', firstPets)
+		if(!firstPets.dog){
+			store.dogs.forEach(dog => DogQueue.enqueue(dog));
+			firstPets.dog = DogQueue.show();
+		}
+		if(!firstPets.cat){
+			store.cats.forEach(cat => CatQueue.enqueue(cat));
+			firstPets.cat = CatQueue.show();
+		}
 
 		return firstPets;
 	},
