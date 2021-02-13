@@ -21,7 +21,7 @@ module.exports = {
 			dog: DogQueue.show(),
 			cat: CatQueue.show()
 		};
-		console.log('first pets: ', firstPets)
+		
 		if(!firstPets.dog){
 			store.dogs.forEach(dog => DogQueue.enqueue(dog));
 			firstPets.dog = DogQueue.show();
